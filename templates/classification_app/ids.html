@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}
+<ul class="topmenu" xmlns="http://www.w3.org/1999/html">
+      <!-- <li><a href="/" class="active">主页</a></li>
+      <li><a href="#news">新闻</a></li>
+      <li><a href="#contact">联系我们</a></li>
+      <li><a href="#about">关于我们</a></li>
+      -->
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="clearfix">
+      <div class="column sidemenu">
+        <ul>
+          <li><a href="/" class="active">加密网络流量识别</a></li>
+          <li><a href="/statistics">加密网络流量统计</a></li>
+          <li><a href="/ids">网络入侵检测</a></li>
+        </ul>
+      </div>
+
+      <div class="column content">
+        <!--
+          <div class="content_header">
+            <h2>网络威胁检测</h2>
+        </div>
+        -->
+        <form id="upload-form" method="post" enctype="multipart/form-data" onsubmit="checkForm()">
+        　　　<input type="file" name="myfile" />
+             <br>
+        　　　<input type="submit" value="提交并检测" />
+        </form>
+        <br>
+        <table class="'table table-condensed" width="90%" align="center">
+          <tr>
+            <th>源IP地址</th>
+            <th>源端口</th>
+            <th>目的IP地址</th>
+            <th>目的端口</th>
+            <th>传输层协议</th>
+            <th>流量类型</th>
+          </tr>
+          <tbody id="tabletext">
+            <td>{{src_ip}}</td>
+            <td>{{src_port}}</td>
+            <td>{{dst_ip}}</td>
+            <td>{{dst_port}}</td>
+            <td>{{protocol}}</td>
+            <td>{{result}}</td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% if messages %}
+    <script>
+      {% for msg in messages %}
+        alert('{{ msg.message }}');
+      {% endfor %}
+    </script>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+table{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse:collapse;
+}
+th,td{
+	font-size:1.1em;
+	text-align: center;
+	height: 20px;
+	padding-top:5px;
+	padding-bottom:4px;
+	background-color:#A7C942;
+	color:#555;
+	border:3px solid #98bf40;
+	padding:2px 1px 2px 1px;
+}
